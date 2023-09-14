@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ford" class="com.dl.innerbean.ref.injection.Ford">
+        <property name="vhNo" value="AP218998" />
+        <property name="vehType" value="Petrol" />
+    </bean>
+
+    <bean id="fordCars" class="com.dl.innerbean.ref.injection.FordCars">
+        <constructor-arg name="vhColor" value="White" />
+        <constructor-arg name="vhYear" value="2011" />
+        <constructor-arg name="ford" ref="ford" />
+    </bean>
+</beans>
